@@ -9,4 +9,5 @@ ipdb
 ipython
 isort
 pytest
+pytest-cov
 pytest-flask

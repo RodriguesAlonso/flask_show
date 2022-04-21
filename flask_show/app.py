@@ -1,11 +1,9 @@
-import flask_show.views as views
 from flask import Flask
-
+from flask_show.ext import site
 
 def create_app():  # Factory principal
 
     app = Flask(__name__)
-
-    views.init_app(app)
+    site.init_app(app)
 
     return app
