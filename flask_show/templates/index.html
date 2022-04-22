@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code-Show</title>
-</head>
-<body>
-    <h1>Página index</h1>
-    {% for element in name %}
-    <ul>       
-        <li>
-            {{ element|e }}
-        </li>
-    </ul>
-    {% endfor %}
-        
-    <h1>{{name}}</h4>
-</body>
-</html>
+{% extends "base.html" %}
+{% import "macros/list_item.html" as list_item %}
+
+{% block top %}
+<section class="hero is-primary">
+    <div class="hero-body">
+        <p class="title">
+            {{ site_name }}
+        </p>
+        <p class="subtitle">
+            {{ site_subtitle }}
+        </p>
+    </div>
+</section>
+{% endblock top%}
+
+{% block main %}
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            {{ list_item.cards([1, 2, 3]) }}
+        </div>
+    </div>
+</section>
+{% endblock main%}
